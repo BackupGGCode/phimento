@@ -1,0 +1,11 @@
+
+[project]
+name=phiMento
+base_path=/home/ghalex/projects/phimento
+make_in_base_path=true
+description=
+run_cmd=make
+
+[files]
+current_page=0
+FILE_NAME_0=0;0;0;16;1;1;0;/home/ghalex/projects/phimento/kernel/main.c;
