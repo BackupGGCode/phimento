@@ -11,6 +11,6 @@ BOCHS_DB="bochdb.txt"
 
 # Script
 if ./tools/$MOUNT $1 $2; then
-	sudo bochs -q -f tools/$BOCHS_DIR/$BOCHS_CONF -rc tools/$BOCHS_DIR/$BOCHS_DB
+	sudo bochs -q -f tools/$BOCHS_DIR/$BOCHS_CONF
 	./tools/$UMOUNT;
 fi;
