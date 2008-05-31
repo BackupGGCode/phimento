@@ -19,6 +19,8 @@
 00000000000i[     ]   x86-64 support: no
 00000000000i[     ]   SEP support: no
 00000000000i[     ]   MWAIT support: no
+00000000000i[     ]   XSAVE support: no
+00000000000i[     ]   AES support: no
 00000000000i[     ] Optimization configuration
 00000000000i[     ]   Guest2HostTLB support: no
 00000000000i[     ]   RepeatSpeedups support: no
@@ -32,22 +34,22 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe 
-00000000000i[MEM0 ] allocated memory at 0x404f6008. after alignment, vector=0x404f7000
+00000000000i[MEM0 ] allocated memory at 0x404f4008. after alignment, vector=0x404f5000
 00000000000i[MEM0 ] 32.00MB
 00000000000i[MEM0 ] rom at 0xf0000/65536 ('/usr/share/bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/38400 ('/usr/share/bochs/VGABIOS-lgpl-latest')
 00000000000i[VTIME] using 'realtime pit' synchronization method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Mon May 26 21:44:41 2008 (time0=1211827481)
+00000000000i[CMOS ] Setting initial clock to: Sun Jun  1 00:15:01 2008 (time0=1212268501)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000e[FDD  ] cannot determine media geometry, trying to use defaults
 00000000000i[FDD  ] fd0: '/dev/loop0' ro=0, h=2,t=80,spt=18
-00000000000i[MEM0 ] Register memory access handlers: 000a0000-000bffff
+00000000000i[MEM0 ] Register memory access handlers: 0x000a0000 - 0x000bffff
 00000000000i[XGUI ] test_alloc_colors: 16 colors available out of 16 colors tried
 00000000000i[XGUI ] font 8 wide x 16 high, display depth = 24
 00000000000i[VGA  ] interval=40000
-00000000000i[MEM0 ] Register memory access handlers: e0000000-e07fffff
+00000000000i[MEM0 ] Register memory access handlers: 0xe0000000 - 0xe07fffff
 00000000000i[VGA  ] VBE Bochs Display Extension Enabled
 00000000000i[     ] init_mem of 'harddrv' plugin device by virtual method
 00000000000i[     ] init_mem of 'keyboard' plugin device by virtual method
@@ -82,7 +84,6 @@
 00000000000i[     ] reset of 'extfpuirq' plugin device by virtual method
 00000000000i[     ] reset of 'speaker' plugin device by virtual method
 00000000000i[XGUI ] [x] Mouse off
-00000000000i[     ] set SIGINT handler to bx_debug_ctrlc_handler
 00000003740i[BIOS ] $Revision: 1.166 $ $Date: 2006/08/11 17:34:12 $
 00000020000e[VGA  ] character height = 1, skipping text update
 00000040000e[VGA  ] character height = 1, skipping text update
@@ -113,27 +114,29 @@
 00000444910i[VBIOS] VBE Bios $Id: vbe.c,v 1.60 2008/03/02 07:47:21 vruppert Exp $
 00000460000e[VGA  ] character height = 1, skipping text update
 00000520000i[XGUI ] charmap update. Font Height is 16
-00002474713i[BIOS ] int13_harddisk: function 41, unmapped device for ELDL=80
-00002479477i[BIOS ] int13_harddisk: function 08, unmapped device for ELDL=80
-00002484119i[BIOS ] *** int 15h function AX=00C0, BX=0000 not yet supported!
-00153480000p[XGUI ] >>PANIC<< POWER button turned off.
-00153480000i[CPU  ] CPU is in protected mode (active)
-00153480000i[CPU  ] CS.d_b = 32 bit
-00153480000i[CPU  ] SS.d_b = 32 bit
-00153480000i[CPU  ] | EAX=00000000  EBX=00067e88  ECX=0000000a  EDX=000003d5
-00153480000i[CPU  ] | ESP=00067e50  EBP=00067e78  ESI=00054ebe  EDI=00054ebf
-00153480000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
-00153480000i[CPU  ] | SEG selector     base    limit G D
-00153480000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00153480000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
-00153480000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00153480000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00153480000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00153480000i[CPU  ] |  FS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00153480000i[CPU  ] |  GS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00153480000i[CPU  ] | EIP=001001bc (001001bc)
-00153480000i[CPU  ] | CR0=0x60000011 CR1=0 CR2=0x00000000
-00153480000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
-00153480000i[CMOS ] Last time is 1211827787 (Mon May 26 21:49:47 2008)
-00153480000i[XGUI ] Exit
-00153480000i[CTRL ] quit_sim called with exit code 1
+00002474642i[BIOS ] int13_harddisk: function 41, unmapped device for ELDL=80
+00002479406i[BIOS ] int13_harddisk: function 08, unmapped device for ELDL=80
+00002484048i[BIOS ] *** int 15h function AX=00C0, BX=0000 not yet supported!
+00096425500p[XGUI ] >>PANIC<< POWER button turned off.
+00096425500i[CPU  ] CPU is in protected mode (active)
+00096425500i[CPU  ] CS.d_b = 32 bit
+00096425500i[CPU  ] SS.d_b = 32 bit
+00096425500i[CPU  ] | EAX=00000000  EBX=0002e240  ECX=00067e88  EDX=000003d5
+00096425500i[CPU  ] | ESP=00067e60  EBP=00067e78  ESI=00054ebe  EDI=00054ebf
+00096425500i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
+00096425500i[CPU  ] | SEG selector     base    limit G D
+00096425500i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00096425500i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
+00096425500i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00096425500i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00096425500i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00096425500i[CPU  ] |  FS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00096425500i[CPU  ] |  GS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00096425500i[CPU  ] | EIP=00100190 (00100190)
+00096425500i[CPU  ] | CR0=0x60000011 CR1=0 CR2=0x00000000
+00096425500i[CPU  ] | CR3=0x00000000 CR4=0x00000000
+00096425500i[CPU  ] >> jmp .+0xfffffffe (0x00100190) : EBFE
+00096425500i[CMOS ] Last time is 1212268693 (Sun Jun  1 00:18:13 2008)
+00096425500i[XGUI ] Exit
+00096425500i[     ] restoring default signal behavior
+00096425500i[CTRL ] quit_sim called with exit code 1
