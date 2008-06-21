@@ -7,5 +7,6 @@ log: tools/bochs/bochsout.txt
 mouse: enabled=0
 clock: sync=realtime
 cpu: ips=500000
-#ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
-#ata0-master: type=disk, path="hdd.img", mode=flat, cylinders=20, heads=16, spt=63
+ata0: enabled=1, ioaddr1=0x1F0, ioaddr2=0x3F0, irq=14
+ata0-master: type=disk, path="bin/hdd.img", mode=flat, cylinders=203, heads=16, spt=63
+
