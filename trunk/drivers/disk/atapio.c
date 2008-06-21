@@ -22,10 +22,10 @@ s32_t read_lba28(hardisk_t* _hdd, u32_t _lba_addr, char* _buff)
 	//0000 00000000 00000000 00000000
 	//0000 00000000 00000000 00000001
 	
-	CHS
-	Chilinder Head Sector
+	//CHS
+	//Chilinder Head Sector
 	
-	Sector = 1;
+	//Sector = 1;
 	
 	u16_t _i, _tmp;
 	
