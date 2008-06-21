@@ -25,6 +25,7 @@ void init_kernel(multiboot_info_t* _mboot)
 	init_isr();		 kstatus_msg("Interrupt Service Routines", "OK");
 	init_irq();		 kstatus_msg("Interrupt Request System", "OK");
 	init_keyboard(); kstatus_msg("Keyboard Driver", "OK");
+	init_hdd();		 kstatus_msg("ATA Driver", "OK");
 	printf("System initialized with success.\n\n");
 	asm volatile("sti");
 	

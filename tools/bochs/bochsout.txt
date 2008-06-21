@@ -34,13 +34,13 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support: vbe 
-00000000000i[MEM0 ] allocated memory at 0x404f4008. after alignment, vector=0x404f5000
+00000000000i[MEM0 ] allocated memory at 0x404f5008. after alignment, vector=0x404f6000
 00000000000i[MEM0 ] 32.00MB
 00000000000i[MEM0 ] rom at 0xf0000/65536 ('/usr/share/bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/38400 ('/usr/share/bochs/VGABIOS-lgpl-latest')
 00000000000i[VTIME] using 'realtime pit' synchronization method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Sun Jun  1 00:15:01 2008 (time0=1212268501)
+00000000000i[CMOS ] Setting initial clock to: Sat Jun 21 00:49:26 2008 (time0=1213998566)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000e[FDD  ] cannot determine media geometry, trying to use defaults
@@ -58,6 +58,8 @@
 00000000000i[     ] init_mem of 'extfpuirq' plugin device by virtual method
 00000000000i[     ] init_mem of 'speaker' plugin device by virtual method
 00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
+00000000000i[HD   ] HD on ata0-0: 'bin/hdd.img' 'flat' mode 
+00000000000i[HD   ] translation on ata0-0 set to 'none'
 00000000000i[HD   ] Using boot sequence floppy, none, none
 00000000000i[HD   ] Floppy boot signature check is enabled
 00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
@@ -114,29 +116,30 @@
 00000444910i[VBIOS] VBE Bios $Id: vbe.c,v 1.60 2008/03/02 07:47:21 vruppert Exp $
 00000460000e[VGA  ] character height = 1, skipping text update
 00000520000i[XGUI ] charmap update. Font Height is 16
-00002474642i[BIOS ] int13_harddisk: function 41, unmapped device for ELDL=80
-00002479406i[BIOS ] int13_harddisk: function 08, unmapped device for ELDL=80
-00002484048i[BIOS ] *** int 15h function AX=00C0, BX=0000 not yet supported!
-00096425500p[XGUI ] >>PANIC<< POWER button turned off.
-00096425500i[CPU  ] CPU is in protected mode (active)
-00096425500i[CPU  ] CS.d_b = 32 bit
-00096425500i[CPU  ] SS.d_b = 32 bit
-00096425500i[CPU  ] | EAX=00000000  EBX=0002e240  ECX=00067e88  EDX=000003d5
-00096425500i[CPU  ] | ESP=00067e60  EBP=00067e78  ESI=00054ebe  EDI=00054ebf
-00096425500i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
-00096425500i[CPU  ] | SEG selector     base    limit G D
-00096425500i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00096425500i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
-00096425500i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00096425500i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00096425500i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00096425500i[CPU  ] |  FS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00096425500i[CPU  ] |  GS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00096425500i[CPU  ] | EIP=00100190 (00100190)
-00096425500i[CPU  ] | CR0=0x60000011 CR1=0 CR2=0x00000000
-00096425500i[CPU  ] | CR3=0x00000000 CR4=0x00000000
-00096425500i[CPU  ] >> jmp .+0xfffffffe (0x00100190) : EBFE
-00096425500i[CMOS ] Last time is 1212268693 (Sun Jun  1 00:18:13 2008)
-00096425500i[XGUI ] Exit
-00096425500i[     ] restoring default signal behavior
-00096425500i[CTRL ] quit_sim called with exit code 1
+00000761402i[BIOS ] ata0-0: PCHS=203/16/63 translation=none LCHS=203/16/63
+00002661475i[BIOS ] int13_harddisk: function 41, unmapped device for ELDL=81
+00002666239i[BIOS ] int13_harddisk: function 08, unmapped device for ELDL=81
+00002670881i[BIOS ] *** int 15h function AX=00C0, BX=0000 not yet supported!
+00050040000p[XGUI ] >>PANIC<< POWER button turned off.
+00050040000i[CPU  ] CPU is in protected mode (active)
+00050040000i[CPU  ] CS.d_b = 32 bit
+00050040000i[CPU  ] SS.d_b = 32 bit
+00050040000i[CPU  ] | EAX=00000000  EBX=0002e240  ECX=0000000a  EDX=001023a4
+00050040000i[CPU  ] | ESP=00067410  EBP=00067e78  ESI=00054eca  EDI=00054ecb
+00050040000i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf ZF af PF cf
+00050040000i[CPU  ] | SEG selector     base    limit G D
+00050040000i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00050040000i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
+00050040000i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00050040000i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00050040000i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00050040000i[CPU  ] |  FS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00050040000i[CPU  ] |  GS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00050040000i[CPU  ] | EIP=001003e6 (001003e6)
+00050040000i[CPU  ] | CR0=0x60000011 CR1=0 CR2=0x00000000
+00050040000i[CPU  ] | CR3=0x00000000 CR4=0x00000000
+00050040000i[CPU  ] >> jmp .+0xfffffffe (0x001003e6) : EBFE
+00050040000i[CMOS ] Last time is 1213998666 (Sat Jun 21 00:51:06 2008)
+00050040000i[XGUI ] Exit
+00050040000i[     ] restoring default signal behavior
+00050040000i[CTRL ] quit_sim called with exit code 1

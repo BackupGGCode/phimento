@@ -50,8 +50,10 @@ clean:
 	rm -f $(OUT) *.a *.o $(CORE_DIR)/*.o
 # DO NOT DELETE
 
-init.o: ../include/kernel/types.h ../include/drivers/video/text.h
-main.o: ../include/kernel/types.h ../include/drivers/video/text.h
+init.o: ../include/kernel/types.h ../include/kernel/multiboot.h
+init.o: ../include/drivers/video/text.h
+main.o: ../include/kernel/types.h ../include/kernel/multiboot.h
+main.o: ../include/drivers/video/text.h ../include/drivers/disk/fatfs.h
 x86/x86.o: ../include/kernel/types.h
 x86/gdt.o: ../include/kernel/types.h ../include/kernel/x86/gdt.h
 x86/idt.o: ../include/kernel/types.h ../include/kernel/x86/idt.h
@@ -60,3 +62,4 @@ x86/isr.o: ../include/kernel/x86/registers.h
 x86/pic.o: ../include/kernel/types.h ../include/kernel/x86/pic.h
 x86/irq.o: ../include/kernel/types.h ../include/kernel/x86/registers.h
 x86/irq.o: ../include/kernel/x86/irq.h
+memory/paging.o: ../include/kernel/types.h

@@ -8,4 +8,14 @@ run_cmd=make
 
 [files]
 current_page=0
-FILE_NAME_0=0;0;0;16;1;1;0;/home/ghalex/projects/phimento/kernel/main.c;
+FILE_NAME_0=1841;0;0;16;1;1;0;/home/ghalex/projects/phimento/kernel/main.c;
+FILE_NAME_1=1724;0;0;16;1;1;0;/home/ghalex/projects/phimento/include/drivers/disk/fatfs.h;
+FILE_NAME_2=150;0;0;16;1;1;0;/home/ghalex/projects/phimento/drivers/disk/fatfs.c;
+FILE_NAME_3=2426;0;0;16;1;1;0;/home/ghalex/projects/phimento/include/drivers/disk/ata.h;
+FILE_NAME_4=0;0;0;16;1;1;0;/home/ghalex/projects/phimento/include/drivers/video/text.h;
+FILE_NAME_5=0;0;0;16;1;1;0;/home/ghalex/projects/phimento/drivers/disk/atapio.c;
+FILE_NAME_6=0;0;0;16;1;1;0;/home/ghalex/projects/dosfs-1.03/dosfs.c;
+FILE_NAME_7=2367;0;0;16;1;1;0;/home/ghalex/projects/dosfs-1.03/fat/libfat.c;
+FILE_NAME_8=0;0;0;16;1;1;0;/home/ghalex/projects/dosfs-1.03/fat/libfat.h;
+FILE_NAME_9=9564;0;0;16;1;1;0;/home/ghalex/projects/dosfs-1.03/fat/bits/libfat.h;
+FILE_NAME_10=0;0;0;16;1;1;0;/home/ghalex/projects/phimento/include/kernel/x86/gdt.h;
