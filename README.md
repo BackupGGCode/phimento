@@ -4,6 +4,8 @@
 
 It is written in C and a little x86 assembly. phiMento OS is a hobby and it is 32-bit only.
 
+---
+
 ## Features: ##
 
   * Memory Managing
